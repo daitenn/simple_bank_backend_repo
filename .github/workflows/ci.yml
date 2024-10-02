@@ -33,10 +33,7 @@ jobs:
             --health-interval 10s
             --health-timeout 5s
             --health-retries 5
-             ports:
           
-
-
     steps:
     - name: Checkout code into the Go module directory
       uses: actions/checkout@v4
