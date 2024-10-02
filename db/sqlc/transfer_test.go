@@ -9,12 +9,11 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-
 func createRandomTransfer(t *testing.T, account1, account2 Account) Transfer {
 	arg := CreateTransferParams{
 		FromAccountID: account1.ID,
-		ToAccountID: account2.ID,
-		Amount: util.RandomMoney(),
+		ToAccountID:   account2.ID,
+		Amount:        util.RandomMoney(),
 	}
 
 	transfer, err := testQueries.CreateTransfer(context.Background(), arg)
@@ -30,7 +29,6 @@ func createRandomTransfer(t *testing.T, account1, account2 Account) Transfer {
 
 	return transfer
 }
-
 
 func TestCreateTransfer(t *testing.T) {
 	account1 := createRandomAccount(t)
@@ -64,9 +62,9 @@ func TestListTransfer(t *testing.T) {
 
 	arg := ListTransfersParams{
 		FromAccountID: account1.ID,
-		ToAccountID: account2.ID,
-		Limit: 5,
-		Offset: 5,
+		ToAccountID:   account2.ID,
+		Limit:         5,
+		Offset:        5,
 	}
 
 	transfers, err := testQueries.ListTransfers(context.Background(), arg)

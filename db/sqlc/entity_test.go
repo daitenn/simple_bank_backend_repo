@@ -9,11 +9,10 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-
 func createRandomEntity(t *testing.T, account Account) Entry {
 	arg := CreateEntryParams{
 		AccountID: account.ID,
-		Amount: util.RandomMoney(),
+		Amount:    util.RandomMoney(),
 	}
 
 	entry, err := testQueries.CreateEntry(context.Background(), arg)
@@ -28,7 +27,6 @@ func createRandomEntity(t *testing.T, account Account) Entry {
 
 	return entry
 }
-
 
 func TestCreateEntity(t *testing.T) {
 	account := createRandomAccount(t)
@@ -56,8 +54,8 @@ func TestListEntries(t *testing.T) {
 
 	arg := ListEntriesParams{
 		AccountID: account.ID,
-		Limit: 5,
-		Offset: 5,
+		Limit:     5,
+		Offset:    5,
 	}
 
 	var entriesCount = 5
