@@ -14,5 +14,7 @@ test:
 	go test -v -cover ./...
 format:
 	go fmt ./...
+server:
+	go run main.go
 
 .PHONY: postgres createdb dropdb migrateup migratedown sqlc test
