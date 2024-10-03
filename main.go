@@ -4,14 +4,14 @@ import (
 	"database/sql"
 	"log"
 
-	_ "github.com/lib/pq"
 	"github.com/daitenn/simplebank/api"
 	db "github.com/daitenn/simplebank/db/sqlc"
+	_ "github.com/lib/pq"
 )
 
 const (
-	dbDriver = "postgres"
-	dbSource = "postgres://root:secret@localhost:5432/simple_bank?sslmode=disable"
+	dbDriver      = "postgres"
+	dbSource      = "postgres://root:secret@localhost:5432/simple_bank?sslmode=disable"
 	serverAddress = "0.0.0.0:8080"
 )
 
